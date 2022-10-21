@@ -1,0 +1,29 @@
+version : "3.8"
+services:
+  app:
+    container_name: go-test-tutorial-app
+    build:
+      context: ./build/app/
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/go/src/github.com/dip-dev/go-test-tutorial
+    working_dir: /go/src/github.com/dip-dev/go-test-tutorial
+    environment:
+      GOPATH: /go
+    command: bash -c "go install github.com/cespare/reflex@latest && reflex -r '\\.(go|html)$$' -R '(build|vendor)/' -R '\\_test\\.go$$' -R 'cover.html' echo{}"
+  mysql:
+    image: mysql:8.0.27
+    container_name: go-test-tutorial-mysql
+    platform: linux/x86_64
+    volumes:
+      - ./build/mysql/conf:/etc/mysql/conf.d
+      - ./build/mysql/sql:/docker-entrypoint-initdb.d
+    ports:
+      - "13306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: TUTORIAL_USER
+      MYSQL_USER: TUTORIAL_USER
+      MYSQL_PASSWORD: GO_TEST_TUTORIAL
+      TZ: Asia/Tokyo
+

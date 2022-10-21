@@ -1,0 +1,2 @@
+[url "https://x-oauth-basic:<GITHUB_TOKEN>@github.dip-net.co.jp/"]
+	insteadOf = https://github.dip-net.co.jp/
