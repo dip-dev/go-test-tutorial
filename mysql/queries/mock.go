@@ -10,31 +10,31 @@ import (
 	gomock "github.com/golang/mock/gomock"
 )
 
-// MockInterface is a mock of Interface interface.
-type MockInterface struct {
+// MockSelecters is a mock of Selecters interface.
+type MockSelecters struct {
 	ctrl     *gomock.Controller
-	recorder *MockInterfaceMockRecorder
+	recorder *MockSelectersMockRecorder
 }
 
-// MockInterfaceMockRecorder is the mock recorder for MockInterface.
-type MockInterfaceMockRecorder struct {
-	mock *MockInterface
+// MockSelectersMockRecorder is the mock recorder for MockSelecters.
+type MockSelectersMockRecorder struct {
+	mock *MockSelecters
 }
 
-// NewMockInterface creates a new mock instance.
-func NewMockInterface(ctrl *gomock.Controller) *MockInterface {
-	mock := &MockInterface{ctrl: ctrl}
-	mock.recorder = &MockInterfaceMockRecorder{mock}
+// NewMockSelecters creates a new mock instance.
+func NewMockSelecters(ctrl *gomock.Controller) *MockSelecters {
+	mock := &MockSelecters{ctrl: ctrl}
+	mock.recorder = &MockSelectersMockRecorder{mock}
 	return mock
 }
 
 // EXPECT returns an object that allows the caller to indicate expected use.
-func (m *MockInterface) EXPECT() *MockInterfaceMockRecorder {
+func (m *MockSelecters) EXPECT() *MockSelectersMockRecorder {
 	return m.recorder
 }
 
 // SelectPrefecture mocks base method.
-func (m *MockInterface) SelectPrefecture() string {
+func (m *MockSelecters) SelectPrefecture() string {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "SelectPrefecture")
 	ret0, _ := ret[0].(string)
@@ -42,13 +42,13 @@ func (m *MockInterface) SelectPrefecture() string {
 }
 
 // SelectPrefecture indicates an expected call of SelectPrefecture.
-func (mr *MockInterfaceMockRecorder) SelectPrefecture() *gomock.Call {
+func (mr *MockSelectersMockRecorder) SelectPrefecture() *gomock.Call {
 	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SelectPrefecture", reflect.TypeOf((*MockInterface)(nil).SelectPrefecture))
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SelectPrefecture", reflect.TypeOf((*MockSelecters)(nil).SelectPrefecture))
 }
 
 // SelectPrefectures mocks base method.
-func (m *MockInterface) SelectPrefectures() string {
+func (m *MockSelecters) SelectPrefectures() string {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "SelectPrefectures")
 	ret0, _ := ret[0].(string)
@@ -56,7 +56,7 @@ func (m *MockInterface) SelectPrefectures() string {
 }
 
 // SelectPrefectures indicates an expected call of SelectPrefectures.
-func (mr *MockInterfaceMockRecorder) SelectPrefectures() *gomock.Call {
+func (mr *MockSelectersMockRecorder) SelectPrefectures() *gomock.Call {
 	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SelectPrefectures", reflect.TypeOf((*MockInterface)(nil).SelectPrefectures))
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SelectPrefectures", reflect.TypeOf((*MockSelecters)(nil).SelectPrefectures))
 }

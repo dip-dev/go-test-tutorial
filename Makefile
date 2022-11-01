@@ -3,7 +3,7 @@ INTERFACES = $(shell $(EXEC_APP) find -name "interface.go" )
 PKGS = $(shell $(EXEC_APP) go list ./... | grep -v vendor )
 GO_VER = 1.19
 
-gotest:
+gotest: lint
 	@$(EXEC_APP) go mod tidy -go=${GO_VER}
 	@$(EXEC_APP) go test -coverprofile=cover.out ./...
 	@$(EXEC_APP) go tool cover -html=cover.out -o cover.html

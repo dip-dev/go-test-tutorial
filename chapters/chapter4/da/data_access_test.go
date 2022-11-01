@@ -1,4 +1,4 @@
-package data
+package da
 
 import (
 	"log"

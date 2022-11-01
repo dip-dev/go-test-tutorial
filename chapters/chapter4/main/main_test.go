@@ -5,7 +5,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/dip-dev/go-test-tutorial/chapters/chapter4/data"
+	data "github.com/dip-dev/go-test-tutorial/chapters/chapter4/da"
 	"github.com/dip-dev/go-test-tutorial/mysql"
 	"github.com/dip-dev/go-test-tutorial/mysql/queries"
 )

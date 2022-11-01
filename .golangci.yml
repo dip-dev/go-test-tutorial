@@ -27,38 +27,32 @@ linters:
     - govet
     - gofmt
     - goimports
-    - deadcode
     - errcheck
     - gosimple
     - ineffassign
-    - structcheck
     - typecheck
     - unused
-    - varcheck
     - bodyclose
-    - rowserrcheck
     - staticcheck
-    - sqlclosecheck
     - unconvert
     - unparam
-    - wastedassign
     - revive
     - stylecheck
 
 issues:
   exclude-rules:
-    - path: internal/chapter2/chapter2.go
+    - path: chapters/chapter2/chapter2.go
       linters:
         - errcheck
         - unused
-    - path: internal/chapter3/chapter3.go
+    - path: chapters/chapter3/chapter3.go
       linters:
         - errcheck
         - unused
-    - path: internal/chapter4/appmodels/appmodel.go
+    - path: chapters/chapter4/da/data_access.go
       linters:
         - errcheck
-    - path: internal/chapter4/services/*
+    - path: chapters/chapter4/main/*
       linters:
         - unused
         - deadcode

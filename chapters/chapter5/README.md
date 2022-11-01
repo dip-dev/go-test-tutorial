@@ -4,7 +4,7 @@ chapter1〜chapter4のテストコードの検証ロジックを
 `"github.com/stretchr/testify/assert"`を使って書き換えてください。  
 
 assertを利用することによりテストコード内のif文が減り、検証ロジックをシンプルに書くことができます。  
-また、assertパッケージでは、テストが途中でFailしても後続の処理が続くため  
+また、`assert.Equals`等はテストが途中でFailしても後続の処理が続くため  
 どこのテストが失敗したかを一覧で出すことができます。
 
 ※`chapter4/main/sample_test.go`にサンプルがあります。 

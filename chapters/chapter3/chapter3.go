@@ -40,9 +40,9 @@ func (c3 *Chapter3) selectPrefecture(name string) (*structs.MPrefecture, error) 
 	defer namedStmt.Close()
 
 	var row structs.MPrefecture
-	// sql.ErrNoRows以外のエラーはテストで再現するのが厳しいため、
-	// チュートリアルでは上記以外のerrはハンドリングしない作りとしている。
+
 	if err = namedStmt.GetContext(ctx, &row, args); err == sql.ErrNoRows {
+		// sql.ErrNoRows以外のエラーはハンドリングしない
 		return nil, nil
 	}
 
