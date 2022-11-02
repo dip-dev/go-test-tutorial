@@ -1,6 +1,6 @@
 package main
 
-// 動作確認したい場合はコメントアウトを外してください。
+// 動作確認したい場合はコメントアウトを外してください
 
 // import (
 // 	"context"
@@ -21,7 +21,7 @@ package main
 // 		want Response
 // 	}{
 // 		"正常系サンプル": {
-// 			area: strToPtr("北海道"),
+// 			area: strToPtr(t, "北海道"),
 // 			want: Response{
 // 				Count: 1,
 // 				Prefectures: []structs.MPrefecture{{
@@ -45,14 +45,14 @@ package main
 
 // 	for tt, tc := range success {
 // 		t.Run(tt, func(t *testing.T) {
-// 			got, err := min.exec(ctx, tc.area)
+// 			got, err := mainTest.exec(ctx, tc.area)
 // 			assert.NoError(t, err)
 // 			assert.Equal(t, tc.want, got)
 // 		})
 // 	}
 // 	for tt, tc := range fail {
 // 		t.Run(tt, func(t *testing.T) {
-// 			got, err := min.exec(ctx, tc.area)
+// 			got, err := mainTest.exec(ctx, tc.area)
 // 			assert.Nil(t, got)
 // 			assert.Regexp(t, tc.want, err)
 // 		})
@@ -67,7 +67,7 @@ package main
 // 		want    Response
 // 	}{
 // 		"正常系（モック）サンプル": {
-// 			area: strToPtr("北海道"),
+// 			area: strToPtr(t, "北海道"),
 // 			mockRes: []structs.MPrefecture{{
 // 				ID:       1,
 // 				Name:     "北海道",
@@ -91,7 +91,7 @@ package main
 // 		want    string
 // 	}{
 // 		"異常系（モック）サンプル": {
-// 			area:    strToPtr("北海道"),
+// 			area:    strToPtr(t, "北海道"),
 // 			mockErr: fmt.Errorf("m_prefectures取得でエラーが発生しました。"),
 // 			want:    "m_prefectures取得でエラーが発生しました。",
 // 		},

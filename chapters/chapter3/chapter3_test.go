@@ -10,13 +10,13 @@ import (
 
 var mysqlCli *mysql.Client
 
-// TestMain(m *testing.M)については README.md を参照してください。
+// TestMain(m *testing.M)については README.md を参照してください
 func TestMain(m *testing.M) {
 	// 前処理 start
 
 	cli, err := mysql.New()
 	if err != nil {
-		log.Fatalf("[FATAL] %v\n", err)
+		log.Fatalf("[FATAL] %+v", err)
 	}
 	mysqlCli = cli
 

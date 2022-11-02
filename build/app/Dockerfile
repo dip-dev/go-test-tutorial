@@ -10,6 +10,3 @@ RUN curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/i
 
 # mock-gen install
 RUN go install github.com/golang/mock/mockgen@v1.6.0
-
-COPY .gitconfig /.gitconfig
-RUN mv /.gitconfig ${HOME}/.gitconfig

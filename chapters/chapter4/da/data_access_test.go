@@ -13,7 +13,7 @@ var mysqlCli *mysql.Client
 func TestMain(m *testing.M) {
 	cli, err := mysql.New()
 	if err != nil {
-		log.Fatalf("[FATAL] %v\n", err)
+		log.Fatalf("[FATAL] %+v", err)
 	}
 	mysqlCli = cli
 
