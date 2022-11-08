@@ -49,7 +49,7 @@ issues:
       linters:
         - errcheck
         - unused
-    - path: chapters/chapter4/da/data_access.go
+    - path: chapters/chapter4/db/select.go
       linters:
         - errcheck
     - path: chapters/chapter4/main/*

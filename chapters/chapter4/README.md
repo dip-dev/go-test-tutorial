@@ -5,7 +5,7 @@
 - テストコードの作成対象は以下です
   - `/main/main.go`
     - 関数名:`exec`、`validate`
-  - `/da/data_access.go`
+  - `/db/select.go`
     - 関数名:`SelectPrefectures`
 
 ## プログラム仕様

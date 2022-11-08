@@ -5,13 +5,13 @@ import (
 	"fmt"
 	"unicode/utf8"
 
-	"github.com/dip-dev/go-test-tutorial/chapters/chapter4/da"
+	"github.com/dip-dev/go-test-tutorial/chapters/chapter4/db"
 	"github.com/dip-dev/go-test-tutorial/mysql/structs"
 )
 
 // Main ..
 type Main struct {
-	da da.Selecters
+	db db.Selecters
 }
 
 // Response ..
@@ -21,9 +21,9 @@ type Response struct {
 }
 
 // New ..
-func New(da da.Selecters) *Main {
+func New(db db.Selecters) *Main {
 	return &Main{
-		da: da,
+		db: db,
 	}
 }
 
@@ -36,7 +36,7 @@ func (m Main) exec(ctx context.Context, area *string) (interface{}, error) {
 	args := map[string]interface{}{
 		"area": *area,
 	}
-	prefectures, err := m.da.SelectPrefectures(ctx, args)
+	prefectures, err := m.db.SelectPrefectures(ctx, args)
 	if err != nil {
 		return nil, err
 	}

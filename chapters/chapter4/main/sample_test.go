@@ -10,10 +10,10 @@ package main
 // 	"github.com/golang/mock/gomock"
 // 	"github.com/stretchr/testify/assert"
 
-// 	"github.com/dip-dev/go-test-tutorial/chapters/chapter4/da"
+// 	"github.com/dip-dev/go-test-tutorial/chapters/chapter4/db"
 // 	"github.com/dip-dev/go-test-tutorial/mysql/structs"
 // )
-//
+
 // func TestSample(t *testing.T) {
 // 	ctx := context.Background()
 // 	success := map[string]struct {
@@ -106,7 +106,7 @@ package main
 
 // 			// mock設定。想定される引数と戻り値がある関数であれば戻り値をReturnメソッドで設定する
 // 			// 設定時に引数へ指定したものと異なる値がテスト時に渡されるとエラーとなり、テストが失敗する。
-// 			mock := da.NewMockSelecters(ctrl)
+// 			mock := db.NewMockSelecters(ctrl)
 // 			args := map[string]interface{}{
 // 				"area": *tc.area,
 // 			}
@@ -126,7 +126,7 @@ package main
 // 			ctrl := gomock.NewController(t)
 // 			defer ctrl.Finish()
 
-// 			mock := da.NewMockSelecters(ctrl)
+// 			mock := db.NewMockSelecters(ctrl)
 // 			args := map[string]interface{}{
 // 				"area": *tc.area,
 // 			}

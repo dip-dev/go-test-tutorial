@@ -5,7 +5,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/dip-dev/go-test-tutorial/chapters/chapter4/da"
+	"github.com/dip-dev/go-test-tutorial/chapters/chapter4/db"
 	"github.com/dip-dev/go-test-tutorial/mysql"
 	"github.com/dip-dev/go-test-tutorial/mysql/queries"
 )
@@ -17,7 +17,7 @@ func TestMain(m *testing.M) {
 	if err != nil {
 		log.Fatalf("[FATAL] %+v", err)
 	}
-	mainTest = New(da.New(cli, queries.New()))
+	mainTest = New(db.New(cli, queries.New()))
 	os.Exit(m.Run())
 }
 
