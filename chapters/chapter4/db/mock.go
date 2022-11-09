@@ -36,16 +36,16 @@ func (m *MockSelecters) EXPECT() *MockSelectersMockRecorder {
 }
 
 // SelectPrefectures mocks base method.
-func (m *MockSelecters) SelectPrefectures(ctx context.Context, args map[string]interface{}) ([]structs.MPrefecture, error) {
+func (m *MockSelecters) SelectPrefectures(ctx context.Context, area string) ([]structs.MPrefecture, error) {
 	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "SelectPrefectures", ctx, args)
+	ret := m.ctrl.Call(m, "SelectPrefectures", ctx, area)
 	ret0, _ := ret[0].([]structs.MPrefecture)
 	ret1, _ := ret[1].(error)
 	return ret0, ret1
 }
 
 // SelectPrefectures indicates an expected call of SelectPrefectures.
-func (mr *MockSelectersMockRecorder) SelectPrefectures(ctx, args interface{}) *gomock.Call {
+func (mr *MockSelectersMockRecorder) SelectPrefectures(ctx, area interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SelectPrefectures", reflect.TypeOf((*MockSelecters)(nil).SelectPrefectures), ctx, args)
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SelectPrefectures", reflect.TypeOf((*MockSelecters)(nil).SelectPrefectures), ctx, area)
 }

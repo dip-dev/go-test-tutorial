@@ -3,7 +3,6 @@ package chapter3
 import (
 	"context"
 	"database/sql"
-	"fmt"
 
 	"github.com/dip-dev/go-test-tutorial/mysql"
 	"github.com/dip-dev/go-test-tutorial/mysql/queries"
@@ -35,16 +34,15 @@ func (c3 *Chapter3) selectPrefecture(name string) (*structs.MPrefecture, error) 
 	query := c3.queries.SelectPrefecture()
 	namedStmt, err := c3.mysqlCli.DB.PrepareNamedContext(ctx, query)
 	if err != nil {
-		return nil, fmt.Errorf("m_prefecture取得 %s", err)
+		return nil, err
 	}
 	defer namedStmt.Close()
 
 	var row structs.MPrefecture
 
 	if err = namedStmt.GetContext(ctx, &row, args); err == sql.ErrNoRows {
-		// sql.ErrNoRows以外のエラーはハンドリングしない
 		return nil, nil
 	}
 
-	return &row, nil
+	return &row, err
 }

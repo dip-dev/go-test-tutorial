@@ -2,7 +2,6 @@ package db
 
 import (
 	"context"
-	"fmt"
 
 	"github.com/dip-dev/go-test-tutorial/mysql"
 	"github.com/dip-dev/go-test-tutorial/mysql/queries"
@@ -24,19 +23,21 @@ func New(mysqlCli *mysql.Client, queries queries.Selecters) *DB {
 }
 
 // SelectPrefectures ..
-func (db *DB) SelectPrefectures(ctx context.Context, args map[string]interface{}) ([]structs.MPrefecture, error) {
+func (db *DB) SelectPrefectures(ctx context.Context, area string) ([]structs.MPrefecture, error) {
+
+	args := map[string]interface{}{
+		"area": area,
+	}
 
 	query := db.queries.SelectPrefectures()
 	namedStmt, err := db.mysqlCli.DB.PrepareNamedContext(ctx, query)
 	if err != nil {
-		return nil, fmt.Errorf("m_prefecture取得 %s", err)
+		return nil, err
 	}
 	defer namedStmt.Close()
 
 	var rows []structs.MPrefecture
-	if err := namedStmt.SelectContext(ctx, &rows, args); err != nil {
-		return nil, fmt.Errorf("m_prefecture取得 %s", err)
-	}
+	err = namedStmt.SelectContext(ctx, &rows, args)
 
-	return rows, nil
+	return rows, err
 }

@@ -28,14 +28,13 @@ communicationパッケージの関数`Greeting`を呼び出し、その戻り値
   // deferで必ずFinishを呼ぶ
   defer ctrl.Finish()
 
-  // mock設定。想定される引数と戻り値がある関数であれば戻り値をReturnメソッドで設定する
+  // mock設定。想定される引数と、戻り値がある関数であれば戻り値をReturnメソッドで設定する
   // 設定時に引数へ指定したものと異なる値がテスト時に渡されるとエラーとなり、テストが失敗する
   mock := example.NewMockInterfaceName(ctrl)
-  // mock対象の関数名が`mockTargetFunc`
-  // 2つの引数を受け、戻り値を2つ返す関数をmockする場合は以下の様に書く
-  // （expectValue: 正常時の値、expectError: 発生させるエラー）
-  mock.EXPECT().mockTargetFunc(tc.paramA, tc.paramB).Return(expectValue, expectError)
+  // 2つの引数を受け、2つの戻り値（正常時の値、エラー）を返す関数をmockする場合は以下の様に書く
+  mock.EXPECT().mockTargetFunc(paramA, paramB).Return(expectValue, expectError)
 
-  // mock化対象のフィールドを持つ構造体に上記で生成したmockを設定する
-  New(mock)
+  // mock化対象のフィールドを持つ構造体に上記で生成したmockを設定し、メソッドを呼ぶ
+  sample := New(mock)
+  sample.exec()
 ```

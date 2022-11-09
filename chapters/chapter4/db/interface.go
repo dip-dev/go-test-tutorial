@@ -8,5 +8,5 @@ import (
 
 // Selecters ..
 type Selecters interface {
-	SelectPrefectures(ctx context.Context, args map[string]interface{}) ([]structs.MPrefecture, error)
+	SelectPrefectures(ctx context.Context, area string) ([]structs.MPrefecture, error)
 }

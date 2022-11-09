@@ -33,10 +33,7 @@ func (m Main) exec(ctx context.Context, area *string) (interface{}, error) {
 		return nil, err
 	}
 
-	args := map[string]interface{}{
-		"area": *area,
-	}
-	prefectures, err := m.db.SelectPrefectures(ctx, args)
+	prefectures, err := m.db.SelectPrefectures(ctx, *area)
 	if err != nil {
 		return nil, err
 	}
