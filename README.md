@@ -14,7 +14,7 @@ Golangで単体テストコードを書くためのチュートリアルです<b
         └── db          : chapter4のみ。DBアクセス処理
 ```
 # 動作環境
-- `Docker Desktop`等の`docker`が動作する環境
+- `Docker Desktop`等の`docker`及び`docker-compose`が動作する環境
 - 以下コマンドが必要です
   - `git`
   - `make`（Windowsをお使いの方）
