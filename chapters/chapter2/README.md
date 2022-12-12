@@ -4,13 +4,13 @@
   - `/chapter2/communication`パッケージのメソッド`Greeting`をmock化し、`Nice to meet you!!`を返却させる
 
 ※ `mock`とは  
-簡単に言うとメソッドの動作をシミュレートするための仕組みです  
-テスト対象のパッケージが呼び出しているメソッドをMockに差し替えることで、  
-望むテスト条件を容易に作ることができます
+簡単に言うとメソッドの動作をシミュレートするための仕組みです<br> 
+テスト対象のパッケージが呼び出しているメソッドをMockに差し替えることで、<br> 
+メソッドの動作を任意に指定したり、メソッドの呼び出し有無や想定した引数が渡されているかを検証することができます。
 
 ## プログラム仕様
 ### 関数名:`exec`
-communicationパッケージの関数`Greeting`を呼び出し、その戻り値を返す
+- communicationパッケージの関数`Greeting`を呼び出し、その戻り値を返す
 
 #### 入力パラメータ
 - なし
@@ -34,7 +34,7 @@ communicationパッケージの関数`Greeting`を呼び出し、その戻り値
   // 2つの引数を受け、2つの戻り値（正常時の値、エラー）を返す関数をmockする場合は以下の様に書く
   mock.EXPECT().mockTargetFunc(paramA, paramB).Return(expectValue, expectError)
 
-  // mock化対象のフィールドを持つ構造体に上記で生成したmockを設定し、メソッドを呼ぶ
+  // mock化対象のフィールドを持つ構造体に上記で生成したmockを設定するå
   sample := New(mock)
   sample.exec()
 ```
