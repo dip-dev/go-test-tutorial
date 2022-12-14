@@ -9,4 +9,4 @@ RUN curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/i
     rmdir bin
 
 # mock-gen install
-RUN go install github.com/golang/mock/mockgen@v1.6.0
+# RUN go install github.com/golang/mock/mockgen@v1.6.0

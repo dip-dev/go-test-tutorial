@@ -1,6 +1,5 @@
 EXEC_APP := docker-compose exec -T app
-INTERFACES = $(shell $(EXEC_APP) find -name "interface.go" )
-PKGS = $(shell $(EXEC_APP) go list ./... | grep -v vendor )
+# INTERFACES = $(shell $(EXEC_APP) find -name "interface.go" )
 GO_VER = 1.19
 
 gotest: lint
@@ -18,5 +17,5 @@ up:
 down:
 	@docker-compose down
 
-gen-mock:
-	@$(foreach src,$(INTERFACES), $(EXEC_APP) sh tools/mockgen/codegen.sh ${src} || exit;)
+# gen-mock:
+# 	@$(foreach src,$(INTERFACES), $(EXEC_APP) sh tools/mockgen/codegen.sh ${src} || exit;)
