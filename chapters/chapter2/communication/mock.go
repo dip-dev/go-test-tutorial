@@ -7,7 +7,7 @@ package communication
 import (
 	reflect "reflect"
 
-	gomock "github.com/golang/mock/gomock"
+	gomock "go.uber.org/mock/gomock"
 )
 
 // MockInterfaceCommunication is a mock of InterfaceCommunication interface.

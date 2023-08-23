@@ -1,4 +1,6 @@
 # Chapter1
+`Require 100% coverage`
+
 ### テストケースの作り方を覚えよう
 
 - テストコード内の`FIXME:`をヒントに関数`addition`のテストコード`chapter1_test.go`を完成させてください

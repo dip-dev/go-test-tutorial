@@ -9,7 +9,7 @@ import (
 	reflect "reflect"
 
 	structs "github.com/dip-dev/go-test-tutorial/mysql/structs"
-	gomock "github.com/golang/mock/gomock"
+	gomock "go.uber.org/mock/gomock"
 )
 
 // MockSelecters is a mock of Selecters interface.

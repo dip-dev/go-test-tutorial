@@ -2,7 +2,7 @@ package chapter1
 
 import "fmt"
 
-func addtion(numA int, numB int) (int, error) {
+func addition(numA int, numB int) (int, error) {
 	if numA < 0 {
 		return 0, fmt.Errorf("numAは0以上の数値を指定してください。")
 	}

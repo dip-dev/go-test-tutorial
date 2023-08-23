@@ -1,6 +1,6 @@
 EXEC_APP := docker-compose exec -T app
-# INTERFACES = $(shell $(EXEC_APP) find -name "interface.go" )
-GO_VER = 1.19
+INTERFACES = $(shell $(EXEC_APP) find -name "interface.go" )
+GO_VER = 1.20
 
 gotest: lint
 	@$(EXEC_APP) go test -coverprofile=cover.out ./...
@@ -17,5 +17,5 @@ up:
 down:
 	@docker-compose down
 
-# gen-mock:
-# 	@$(foreach src,$(INTERFACES), $(EXEC_APP) sh tools/mockgen/codegen.sh ${src} || exit;)
+gen-mock:
+	@$(foreach src,$(INTERFACES), $(EXEC_APP) sh tools/mockgen/codegen.sh ${src} || exit;)

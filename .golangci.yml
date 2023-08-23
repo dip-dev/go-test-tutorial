@@ -45,6 +45,10 @@ issues:
       linters:
         - errcheck
         - unused
+        - revive
+    - path: chapters/chapter2/communication/communication.go
+      linters:
+        - revive
     - path: chapters/chapter3/chapter3.go
       linters:
         - errcheck
@@ -56,3 +60,4 @@ issues:
       linters:
         - unused
         - deadcode
+        - revive
