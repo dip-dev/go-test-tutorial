@@ -24,7 +24,7 @@ func TestAddition(t *testing.T) {
 
 	for tt, tc := range success {
 		t.Run(tt, func(t *testing.T) {
-			got, err := addtion(tc.numA, tc.numB)
+			got, err := addition(tc.numA, tc.numB)
 			if err != nil {
 				t.Errorf("err is not nil: %s", err)
 			}
@@ -35,7 +35,7 @@ func TestAddition(t *testing.T) {
 	}
 	for tt, tc := range fail {
 		t.Run(tt, func(t *testing.T) {
-			got, err := addtion(tc.numA, tc.numB)
+			got, err := addition(tc.numA, tc.numB)
 			if got != 0 {
 				t.Errorf("unexpected return. want:0 actual:%d", got)
 			}

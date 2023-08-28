@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/golang/mock/gomock"
 	"github.com/stretchr/testify/assert"
+	"go.uber.org/mock/gomock"
 
 	"github.com/dip-dev/go-test-tutorial/chapters/chapter4/db"
 	"github.com/dip-dev/go-test-tutorial/mysql/structs"

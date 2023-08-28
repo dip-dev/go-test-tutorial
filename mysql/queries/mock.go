@@ -7,7 +7,7 @@ package queries
 import (
 	reflect "reflect"
 
-	gomock "github.com/golang/mock/gomock"
+	gomock "go.uber.org/mock/gomock"
 )
 
 // MockSelecters is a mock of Selecters interface.

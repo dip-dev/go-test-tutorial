@@ -1,6 +1,6 @@
 EXEC_APP := docker-compose exec -T app
 # INTERFACES = $(shell $(EXEC_APP) find -name "interface.go" )
-GO_VER = 1.19
+GO_VER = 1.20
 
 gotest: lint
 	@$(EXEC_APP) go test -coverprofile=cover.out ./...

@@ -1,4 +1,6 @@
 # Chapter5
+`Require 100% coverage`
+
 ### 検証ロジックをassertに書き換えてみよう
 chapter1〜chapter4のテストコードの検証ロジックを<br> 
 `"github.com/stretchr/testify/assert"`を使って書き換えてください<br> 
