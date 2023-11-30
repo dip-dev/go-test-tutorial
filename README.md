@@ -14,7 +14,7 @@ Goで単体テストコードを書くためのチュートリアルです<br>
         └── db          : chapter4のみ。DBアクセス処理
 ```
 # 動作環境
-- `Docker Desktop`等の`docker`及び`docker-compose`が動作する環境
+- `Docker Desktop`等の`docker`及び`docker compose`が動作する環境
 - 以下コマンドが必要です
   - `git`
   - `make`（Windowsをお使いの方）
@@ -37,9 +37,9 @@ Goで単体テストコードを書くためのチュートリアルです<br>
 - テスト実施方法
   - `$ make gotest`を実行してください
   - パッケージ単位や関数単位でテストを実行したい場合
-    - パッケージ単位：`$ docker-compose exec -T <サービス名(※)> go test -v <テスト対象のパッケージまでのパス>`
+    - パッケージ単位：`$ docker compose exec -T <サービス名(※)> go test -v <テスト対象のパッケージまでのパス>`
     - 関数単位：上記パッケージ単位までのコマンドに `-run <関数名>` を追加してください
-      - ※サービス名は`docker-compose.yml`の`services`に記載されているものです。当チュートリアルの場合は`app`になります
+      - ※サービス名は`docker compose.yml`の`services`に記載されているものです。当チュートリアルの場合は`app`になります
 
 ## テストの記述例
 ```go
