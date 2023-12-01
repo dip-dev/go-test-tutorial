@@ -24,7 +24,7 @@ func TestSample(t *testing.T) { // トップテスト関数
 - 以下コマンドでテストを実行してください
 
 ```
-$ docker-compose exec app go test -v -count=1 github.com/dip-dev/go-test-tutorial/chapters/chapter6 -run TestPrintString
+$ docker compose exec app go test -v -count=1 github.com/dip-dev/go-test-tutorial/chapters/chapter6 -run TestPrintString
 ```
 
 テストの完了に3秒ほど掛かったはずです
@@ -104,7 +104,7 @@ ok  	github.com/dip-dev/go-test-tutorial/chapters/chapter6	1.006s
 ### 3. トップテスト関数を並列実行してみよう
 - 以下コマンドでテストを実行してください
 ```
-$ docker-compose exec app go test -v -count=1 github.com/dip-dev/go-test-tutorial/chapters/chapter6
+$ docker compose exec app go test -v -count=1 github.com/dip-dev/go-test-tutorial/chapters/chapter6
 ```
 
 実行に2秒ほど掛かったかと思います<br>
@@ -121,7 +121,7 @@ $ docker-compose exec app go test -v -count=1 github.com/dip-dev/go-test-tutoria
 - 以下コマンドでテストを実行してください
   - トップテスト関数が2つでそれぞれサブテストが3つ起動するので`-parallel=6`を指定しています
 ```
-$ docker-compose exec app go test -v -parallel=6 -count=1 github.com/dip-dev/go-test-tutorial/chapters/chapter6
+$ docker compose exec app go test -v -parallel=6 -count=1 github.com/dip-dev/go-test-tutorial/chapters/chapter6
 ```
 
 2つのトップテスト関数の実行が1秒ほどで完了したかと思います

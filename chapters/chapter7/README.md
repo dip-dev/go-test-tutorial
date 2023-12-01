@@ -11,7 +11,7 @@ func deleteTextFile(t *testing.T, target string) {
 ```
 - 以下コマンドでテストを実行してください
 ```
-$ docker-compose exec app go test -count=1 github.com/dip-dev/go-test-tutorial/chapters/chapter7
+$ docker compose exec app go test -count=1 github.com/dip-dev/go-test-tutorial/chapters/chapter7
 ```
 
 以下のような結果になったかと思います

@@ -1,4 +1,4 @@
-EXEC_APP := docker-compose exec -T app
+EXEC_APP := docker compose exec -T app
 # INTERFACES = $(shell $(EXEC_APP) find -name "interface.go" )
 GO_VER = 1.20
 
@@ -11,11 +11,11 @@ lint:
 	@$(EXEC_APP) golangci-lint run --fix --timeout 3m
 
 up:
-	@docker-compose up -d
+	@docker compose up -d
 	@$(EXEC_APP) go mod tidy -go=${GO_VER}
 
 down:
-	@docker-compose down
+	@docker compose down
 
 # gen-mock:
 # 	@$(foreach src,$(INTERFACES), $(EXEC_APP) sh tools/mockgen/codegen.sh ${src} || exit;)
